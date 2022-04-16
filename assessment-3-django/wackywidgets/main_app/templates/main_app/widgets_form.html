@@ -13,7 +13,7 @@
 <body>
     <h1> Wacky Widgets </h1>
 
-    {% if widget_list|length == 0 %}
+    {% if Widgets_list|length == 0 %}
 
     <h3> No Widgets Exist </h3>
 
@@ -24,34 +24,17 @@
             <th>Quantity</th>
             <th>Delete</th>
         </tr>  
+        {% for widgets in Widgets_list %}
         <tr>
-            <td>test description</td>
-            <td>test quantity</td>
-            <td><a href=''>X</a></td>
+            <td>{{widgets.description}}</td>
+            <td>{{widgets.quantity}}</td>
+            <td><a href='{{widgets.id}}/delete'>X</a></td>
         </tr> 
-    
+        {% endfor %}
     </table>
-    
     {% endif %}
 <hr/>
 
-<table class="pure-table pure-table-striped">
-    <tr>
-        <th>Description</th>
-        <th>Quantity</th>
-        <th>Delete</th>
-    </tr>  
-    <tr>
-        <td>test description</td>
-        <td>test quantity</td>
-        <td><a href=''>X</a></td>
-    </tr> 
-
-</table>
-
-<!-- % for w in widgets %
-<div>{{w.description}}</div>
-<div>{{w.quantity}}</div>} -->
 
 
 <h4>Add Widgets</h4>
